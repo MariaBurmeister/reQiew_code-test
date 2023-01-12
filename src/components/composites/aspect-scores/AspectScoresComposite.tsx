@@ -11,7 +11,7 @@ import './AspectScoresComposite.scss';
 export const AspectScoresComposite: FunctionComponent = () => {
     const {averageRating, amountOfReviews, reviewsByRate} = useReviews();
     const [showFilters, setShowFilters] = useState(false);
-    const [positionFilters, setPositionFilters] = useState<'header' | 'sidebar'>('header');
+    const [positionFilters, setPositionFilters] = useState<'header' | 'sidebar'>('sidebar');
 
 
     const toggleFilters = () => {

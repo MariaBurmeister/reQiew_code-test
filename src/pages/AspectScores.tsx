@@ -4,7 +4,7 @@ import { AspectScoresComposite } from "../components/composites";
 
 const AspectScores: FunctionComponent = () => {
     return (
-        <Page title="Aspect Scores" variant="header-content">
+        <Page title="Aspect Scores" variant="sidebar-content">
             <AspectScoresComposite/>
         </Page>
     );
