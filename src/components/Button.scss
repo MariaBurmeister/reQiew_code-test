@@ -1,0 +1,20 @@
+@import '../variables';
+
+button {
+    &.primary {
+        @extend %button-primary;
+    }
+
+    &.main-nav {
+        @extend %main-nav-button;
+    }
+
+    &.header-toggle {
+        @extend %header-toggle-button;
+    }
+
+    &.sidebar-toggle {
+        @extend %sidebar-toggle-button;
+    }
+
+}

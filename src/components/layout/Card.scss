@@ -1,0 +1,68 @@
+@import '../../Variables.scss';
+
+
+.card {
+    position: relative;
+
+    border-radius: 2.5rem;
+    box-shadow: 0 1px 2px 0 #0000000d;
+    padding: 2.5rem;
+
+    &.base {
+        background-color: $bg-yellow-light;
+        &.clickable:hover {
+            background-color: $bg-yellow-medium; 
+            outline: 4px solid $bg-yellow-medium;
+       }
+    }
+    &.pink {
+        background-color: $bg-pink-light;
+        &.clickable:hover {
+            background-color: $bg-pink-medium;
+            outline: 4px solid $bg-pink-medium;
+        }
+    }
+    &.green {
+        background-color: $bg-green-light;
+        &.clickable:hover {
+            background-color: $bg-green-medium;
+            outline: 4px solid $bg-green-medium;
+        }
+    }
+    &.blue {
+        background-color: $bg-blue-light;
+        &.clickable:hover {
+            background-color: $bg-blue-medium;
+            outline: 4px solid $bg-blue-medium;
+        }
+    }
+    &.pink {
+        background-color: $bg-pink-light;
+        &.clickable:hover {
+            background-color: $bg-pink-medium;
+            outline: 4px solid $bg-pink-medium;
+        }
+    }
+    &.orange {
+        background-color: $bg-orange-light;
+        &.clickable:hover {
+            background-color: $bg-orange-medium;
+            outline: 4px solid $bg-orange-medium;
+        }
+    }
+    &.yellow {
+        background-color: $bg-yellow-light;
+        &.clickable:hover {
+            background-color: $bg-yellow-medium;
+            outline: 4px solid $bg-yellow-medium;
+        }
+    }
+
+}
+
+.card-content {
+    margin: 1rem 0 0;
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+
+}

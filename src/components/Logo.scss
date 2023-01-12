@@ -1,0 +1,9 @@
+@import '../Variables.scss';
+
+.logo {
+
+    &.main-nav__logo {
+        color: $font-color-main;
+        font-size: 3rem;
+    }
+}

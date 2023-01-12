@@ -1,0 +1,444 @@
+$font-color-main: darkslategrey;
+
+$neutral-color-dark: darkslategrey;
+$neutral-color: slategray;
+$neutral-color-light: darkgray;
+
+$critical-color-dark: darkred;
+$critical-color: red;
+$critical-color-light: lightcoral;
+
+$neutral-bad-color: rgb(255, 98, 0);
+
+$neutral-color-dark: coral;
+$neutral-color: orange;
+$neutral-color-light: rgba(249, 187, 73, 0.72);
+
+$neutral-good-color: #ffe100 ;
+
+
+$good-color-dark: darkgreen;
+$good-color: green;
+$good-color-light: lightgreen;
+
+
+$bg-pink-light: #ffb6c199;
+$bg-pink-medium: #ffb6c1e8;
+
+$bg-blue-light: #b6edff;
+$bg-blue-medium: #7ccbe6;
+$bg-blue-dark: #81bace;
+
+$bg-green-light: #9bdda199;
+$bg-green-medium: #9bdda0e0;
+
+$bg-orange-light: #ffd4b699;
+$bg-orange-medium: #ffd4b6de;
+
+$bg-yellow-light: #fff3b699;
+$bg-yellow-medium: #fff3b6;
+
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+
+$shadow-button: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+$shadow-button-hover: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+$shadow-button-active: $shadow-button;
+
+$sidebar-bg-color: $bg-blue-light;
+
+%sr-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+%button-base {
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+
+    max-width: max-content;
+  
+    align-items: center;
+    justify-content: center;
+
+    margin: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: $border-radius-sm;
+    border-width: 0;
+    
+    box-shadow: $shadow-button;
+    
+    cursor: pointer;
+    font-size: medium;
+    font-weight: 600;
+    
+    transition: all 0.3s ease-in-out;
+    
+    outline: solid;
+    outline-width: 0;
+
+    &:hover {
+        box-shadow: $shadow-button-hover;
+    }
+
+    &:focus  {        
+        outline: solid 5px;
+        outline-offset: -2px;
+        
+        box-shadow: $shadow-button-hover;
+    }
+
+    &:active {
+        box-shadow: $shadow-button-active;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      outline: none;
+      box-shadow: none;
+    }
+}
+
+%button-primary {
+
+    @extend %button-base;
+
+    background-color: $bg-blue-light;
+    color: $font-color-main;
+
+    &:hover {        
+        background-color: $bg-blue-medium;
+        outline-color: $bg-blue-medium;
+    }
+
+    &:focus {        
+        background-color: $bg-blue-medium;
+        outline-color: $bg-blue-medium;
+    }
+
+    &:active {
+        border-color: $bg-blue-dark;
+        background-color: $bg-blue-dark;
+        outline-color: $bg-blue-dark;
+
+        color: white;
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+    }
+}
+
+
+%main-nav-button {
+
+    @extend %button-base;
+
+    text-decoration: none;
+
+
+    background-color: $bg-blue-medium;
+    color: white;
+
+    max-width: unset;
+
+    box-shadow: none;
+
+    direction: ltr;
+
+    &:hover {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;  
+    }
+
+    &:has(:active) {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &.active {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &:has( :focus) {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;      
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+    }
+
+    &.icon-only {
+        grid-template-columns: auto;
+        padding: .8rem;
+
+        border-radius: 50%;
+
+        &:hover {
+            color: $font-color-main;
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &:focus {
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &.active {
+            color: $font-color-main;
+            background-color: $bg-blue-light;
+
+            outline: 4px solid white;
+            font-size: larger;
+            padding: .7rem;
+
+            box-shadow: none;    
+        }    
+        
+        @media screen and (min-width: 810px) {
+
+            &.active {
+                margin-left: 3rem; 
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+
+            &.active {
+                margin-left: 0; 
+                margin-bottom: 3rem;
+            }
+        }
+                
+        
+        &:disabled {
+            background-color: lightgray;
+            outline: 2px solid darkgray;
+            color: white;
+        }
+        
+    }
+
+
+}
+
+%main-nav-link {
+    @extend %button-base;
+
+    text-decoration: none;
+
+
+    background-color: $bg-blue-medium;
+    color: white;
+
+    max-width: unset;
+
+    box-shadow: none;
+
+    direction: ltr;
+
+    &:hover {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;  
+    }
+
+    &:has(:active) {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &.active {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &:has( :focus) {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;      
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+    }
+
+    &.icon-only {
+        grid-template-columns: auto;
+        padding: .8rem;
+
+        border-radius: 50%;
+
+        &:hover {
+            color: $font-color-main;
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &:focus {
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &.active {
+            color: $font-color-main;
+            background-color: $bg-blue-light;
+
+            outline: 4px solid white;
+            font-size: larger;
+            padding: .7rem;
+
+            box-shadow: none;    
+        }    
+        
+        @media screen and (min-width: 810px) {
+
+            &.active {
+                margin-left: 3rem; 
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+
+            &.active {
+                margin-left: 0; 
+                margin-bottom: 3rem;
+            }
+        }
+                
+        
+        &:disabled {
+            background-color: lightgray;
+            outline: 2px solid darkgray;
+            color: white;
+        }
+        
+    }
+
+}
+
+%header-toggle-button {
+    @extend %button-base;
+
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    border-radius: 0 0 4px 4px;
+
+    bottom: 100% ;
+    right:0;
+    z-index: 100;
+
+    height: 1rem;
+    width: 100%;
+
+    // background-color: $bg-blue-light;
+    outline-color: $bg-blue-light;
+
+}
+
+%sidebar-toggle-button {
+    @extend %button-base;
+
+    position: absolute;
+    display: block;
+    margin: 0;
+    padding: auto;
+
+    border-radius: 4px 0 0 4px;
+
+    top: 0;
+    left:0;
+    z-index: 100;
+
+    height: 100%;
+    width: 1rem;
+
+    // background-color: $bg-blue-light;
+    outline-color: $bg-blue-light;
+
+
+    &:hover {
+        width: 2rem;
+    }
+ 
+}
+
+
+
+
+
+%help-text {
+    font-size: smaller;
+    margin: 0;
+}
+
+%h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+%h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+%h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+%h4 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+%h5 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+%h6 {
+    font-size: .9rem;
+    margin: 0;
+}

@@ -1,0 +1,1 @@
+export {AspectScoresComposite} from './aspect-scores';

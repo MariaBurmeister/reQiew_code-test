@@ -1,0 +1,21 @@
+@import '../Variables.scss';
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {    
+    // @extend %main-nav-link;
+
+}
+
+.icon-only {
+    >span{
+        @extend %sr-only;
+    }
+}
+
+.main-nav__link {
+    @extend %main-nav-link;
+}
+

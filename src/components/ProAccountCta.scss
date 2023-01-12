@@ -1,0 +1,17 @@
+@import '../Variables.scss';
+.pro-account-cta__content {
+
+    @extend %h2;
+    font-weight: 600;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+
+    > .pro-account-cta__icon {
+        @extend %h1;
+    }
+
+}

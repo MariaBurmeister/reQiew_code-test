@@ -1,0 +1,53 @@
+
+@import '../variables.scss';
+
+.average-rating {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 1rem;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    font-weight: 600;
+
+    >p {
+        margin-top: 0;
+    }
+
+}
+
+.average__rating-ratio {
+    border: 2px solid $neutral-color-dark;
+    padding: .5rem .7rem .3rem;
+    border-radius: 1rem;
+
+    &.critical {
+        border-color: $critical-color;
+        >.average__rating-ratio__highlight {
+            color: $critical-color;
+        }
+    }   
+    &.neutral {
+        border-color: $neutral-color;
+        >.average__rating-ratio__highlight {
+            color: $neutral-color;
+        }
+    }
+    &.good {
+        border-color: $good-color;
+        >.average__rating-ratio__highlight {
+            color: $good-color;
+        }
+    }
+
+}
+
+.average__rating-ratio__highlight {
+    font-size: 2rem;
+}
+
+.average__review-amount__highlight {
+    font-size: 1.5rem;
+    font-weight: 900;
+}

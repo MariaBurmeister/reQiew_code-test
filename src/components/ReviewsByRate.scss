@@ -1,0 +1,99 @@
+@import '../Variables.scss';
+.reviews-by-rate {
+    display: grid;
+    grid-template-columns: 2.5rem auto auto auto;
+    gap: 1rem;
+
+    justify-content: space-between;
+    align-items: center;
+    
+
+   .by-rate__progress{
+        margin-top: 1rem;
+
+        >p{
+            text-align: center;
+            margin: 0;
+        }
+
+        &.critical { 
+            color: $critical-color;
+        }
+
+        &.neutral-bad { 
+            color: $neutral-bad-color;
+        }
+
+        &.neutral { 
+            color: $neutral-color;
+        }
+
+        &.neutral-good { 
+            color: $neutral-good-color;
+        }
+
+        &.good {
+            color: $good-color;
+        }
+
+        >progress[value]{
+            accent-color: #FFD700;
+            background-color: #ffe7c9;
+            height: .4rem;
+            margin: auto;
+            border-radius: .4rem;  
+
+        }
+
+        >progress[value]::-webkit-progress-bar, 
+        progress[value]::-moz-progress-bar,
+        progress[value]::-webkit-progress-value {
+            background-color: #FFD700;
+            border-radius: .4rem;  
+        }
+    }
+}
+
+.by-rate__rating-ratio {
+
+    flex-wrap: wrap-reverse;
+    word-wrap: break-word;
+    text-align: center;
+
+    &.critical {
+        >.by-rate__rating-ratio__highlight {
+            color: $critical-color;
+        }
+    }  
+    &.neutral-bad {
+        >.by-rate__rating-ratio__highlight {
+            color: $neutral-bad-color;
+        }
+    } 
+    &.neutral {
+        >.by-rate__rating-ratio__highlight {
+            color: $neutral-color;
+        }
+    }
+    &.neutral-good {
+        >.by-rate__rating-ratio__highlight {
+            color: $neutral-good-color;
+        }
+    }
+    &.good {
+        >.by-rate__rating-ratio__highlight {
+            color: $good-color;
+        }
+    }
+
+}
+
+.by-rate__rating-ratio__highlight {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.by-rate__review-amount__highlight {
+    font-size: 1.5rem;
+    font-weight: 900;
+}

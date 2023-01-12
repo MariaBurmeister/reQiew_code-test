@@ -1,0 +1,30 @@
+@import '../variables.scss';
+.star-rating {
+    --rest: calc(100% - var(--star-rating));
+    
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.5em;
+    padding-top: 0.25rem;
+
+    
+    &.critical {
+        background: linear-gradient(to right, $critical-color var(--star-rating) , $critical-color-light var(--rest));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }   
+    &.neutral {
+        background: linear-gradient(to right, $neutral-color var(--star-rating) , $neutral-color-light var(--rest));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &.good {
+        background: linear-gradient(to right, $good-color var(--star-rating) , $good-color-light var(--rest));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+}
