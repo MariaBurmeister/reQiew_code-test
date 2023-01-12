@@ -2,7 +2,7 @@
 
 ### This is a code challenge for ST company.
 
-To run project locally:
+#### **To run project locally**:
 
 - Clone this repository.
 - Run `npm install` to install all dependencies.
@@ -11,9 +11,9 @@ To run project locally:
 The goal was to provide a prototype to be presented in order to get a green loght fot the project,
 while making suggestions for improvements in UX/UI and data viualization.
 
-#### Implemented suggestions for improvements:
+#### **Implemented suggestions for improvements**:
 
-##### Layout:
+##### **Layout**:
 
 - Make side navigation bar collapsible, thus allowing more space for the main content.
     - -> This allows for less cluttered UI leading to better visualization of the data.
@@ -29,7 +29,7 @@ while making suggestions for improvements in UX/UI and data viualization.
 - Make layout responsive to different screen sizes.
     - -> This optimizes experience across devices.
 
-##### Data visualization:
+##### **Data visualization**:
 
 - Make use of colors to make intuitive sense of the data.
     - -> This allows for a better understanding of the data, without the need to return to the numbers every time.
@@ -37,8 +37,13 @@ while making suggestions for improvements in UX/UI and data viualization.
 - Add accent to main data points, to make them stand out.
     - -> This makes most relevant information easy to find on first glance.
 
-##### Interaction:
+##### **Interaction**:
 
 - Make full CTA container clickable, instead of just the text.
 
 - Add visual feedback to CTA container, to make it more intuitive that it is clickable.
+
+
+#### **Disclaimer**:
+
+There are still many things that could be improved, but I believe this is a good start.
