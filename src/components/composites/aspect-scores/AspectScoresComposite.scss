@@ -1,6 +1,7 @@
 .filters{
     height: 100%;
     width: 300px;
+    background: white;
 }
 
 .results {
@@ -24,19 +25,18 @@
 
 .filters__header-container{
     position: relative;
-
-    
-
 }
 
 .filters__sidebar-container{
     position: relative;
 
-    right: 1.3rem;
+    right: 1.5rem;
     top: 0;
     max-height: 95vh;
 
     width: min-content;
+    background: white;
+
 }
 
 .column-1 {

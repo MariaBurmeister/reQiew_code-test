@@ -34,7 +34,7 @@
     }
 
     img.logo{
-        transition: all .2s ease-in-out;
+        transition: all .2s fade-in-out;
 
         border-radius: $border-radius-md;
         outline: 4px solid $bg-blue-dark;
@@ -67,6 +67,7 @@
 
         background: linear-gradient(0deg , $bg-blue-light 63%, transparent 37%);
     }
+
 
 }
 

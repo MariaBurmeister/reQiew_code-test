@@ -34,6 +34,7 @@ $bg-green-medium: #9bdda0e0;
 
 $bg-orange-light: #ffd4b699;
 $bg-orange-medium: #ffd4b6de;
+$bg-orange-dark: orange;
 
 $bg-yellow-light: #fff3b699;
 $bg-yellow-medium: #fff3b6;
@@ -355,9 +356,211 @@ $sidebar-bg-color: $bg-blue-light;
 
 }
 
-%header-toggle-button {
+%main-nav-select-dropdown {
+
     @extend %button-base;
 
+    text-decoration: none;
+
+
+    background-color: $bg-blue-medium;
+    color: white;
+
+    max-width: unset;
+
+    box-shadow: none;
+
+    direction: ltr;
+
+    &:hover {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;  
+    }
+
+    &:has(:active) {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &.active {
+        color: $font-color-main;
+        background-color: white;
+        outline: 4px solid $bg-blue-dark;
+        box-shadow: none;  
+    }
+
+    &:has( :focus) {
+        color: $font-color-main;
+        background-color: $bg-blue-light;
+        outline: 4px solid  white;
+        box-shadow: none;      
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+    }
+
+    &.icon-only {
+        grid-template-columns: auto;
+        padding: .8rem;
+
+        border-radius: 50%;
+
+        &:hover {
+            color: $font-color-main;
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &:focus {
+            outline: 4px solid $bg-blue-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &.active {
+            color: $font-color-main;
+            background-color: $bg-blue-light;
+
+            outline: 4px solid white;
+            font-size: larger;
+            padding: .7rem;
+
+            box-shadow: none;    
+        }    
+        
+        @media screen and (min-width: 810px) {
+
+            &.active {
+                margin-left: 3rem; 
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+
+            &.active {
+                margin-left: 0; 
+                margin-bottom: 3rem;
+            }
+        }
+                
+        
+        &:disabled {
+            background-color: lightgray;
+            outline: 2px solid darkgray;
+            color: white;
+        }
+        
+    }
+
+}
+
+%filters-select-dropdown {
+
+    @extend %button-base;
+
+    text-decoration: none;
+
+    width: fit-content;
+
+
+    background-color: $bg-orange-light;
+    border-radius: 30px;
+
+
+    color: $bg-orange-dark;
+
+
+
+    box-shadow: none;
+
+    direction: ltr;
+
+    &:hover {
+        background-color: $bg-orange-medium;
+        box-shadow: none;  
+    }
+
+
+    &:active {
+        color: $font-color-main;
+        background-color: $bg-orange-dark;
+        box-shadow: none;  
+    }
+
+    &:focus-within {
+        color: $font-color-main;
+        background-color: $bg-orange-dark;
+        box-shadow: none;      
+    }
+
+    &:disabled {
+        background-color: lightgray;
+        color: white;
+    }
+
+    &.icon-only {
+        grid-template-columns: auto;
+        padding: .8rem;
+
+        border-radius: 50%;
+
+        &:hover {
+            color: $bg-orange-dark;
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &:focus-within {
+            font-size: larger;
+            padding: .7rem;
+        }
+
+        &.active {
+            color: $font-color-main;
+            background-color: $bg-orange-dark;
+
+            font-size: larger;
+            padding: .7rem;
+
+            box-shadow: none;    
+        }    
+        
+        @media screen and (min-width: 810px) {
+
+            &.active {
+                margin-left: 3rem; 
+                margin-bottom: 0;
+            }
+        }
+
+        @media screen and (max-width: 810px) {
+
+            &.active {
+                margin-left: 0; 
+                margin-bottom: 3rem;
+            }
+        }
+                
+        
+        &:disabled {
+            background-color: lightgray;
+            color: white;
+        }
+        
+    }
+
+}
+
+%header-toggle-button {
+    
     position: absolute;
     display: block;
     margin: 0;
@@ -372,20 +575,28 @@ $sidebar-bg-color: $bg-blue-light;
     height: 1rem;
     width: 100%;
 
-    // background-color: $bg-blue-light;
-    outline-color: $bg-blue-light;
+    cursor: pointer;
 
+    background-color: $bg-blue-light;
+    outline-color: $bg-blue-light;
+    outline: 0 solid ;
+
+    &:hover {
+        outline-width: 2px ;
+    }
+ 
 }
 
 %sidebar-toggle-button {
-    @extend %button-base;
 
     position: absolute;
     display: block;
     margin: 0;
-    padding: auto;
+    padding: 0;
 
     border-radius: 4px 0 0 4px;
+
+    border: none;
 
     top: 0;
     left:0;
@@ -394,12 +605,13 @@ $sidebar-bg-color: $bg-blue-light;
     height: 100%;
     width: 1rem;
 
-    // background-color: $bg-blue-light;
-    outline-color: $bg-blue-light;
+    cursor: pointer;
 
+    background-color: $bg-blue-light;
+    outline: 0 solid $bg-blue-light;
 
     &:hover {
-        width: 2rem;
+        outline-width: 2px ;
     }
  
 }

@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react';
 import './MainNavigation.scss';
 import { useState } from "react";
 import { Button } from "./Button";
+import { DropdownSelect } from "./DropdownSelect";
 
 export const MainNavigation = () => {
   const isLargeScreen = window.innerWidth > 810;
@@ -33,15 +34,11 @@ export const MainNavigation = () => {
             <Navbar.Item iconOnly={hideLabel} iconBefore="carbon:growth" label='Driver Analysis' to='/driver-analysis'/>
             <Navbar.Item iconOnly={hideLabel} iconBefore="carbon:growth" label='Aspect Details' to='/aspect-details'/>
         </Navbar>
-          
-        <label htmlFor="dashboard" className={`dashboard-dropdown nav-item main-nav__link${collapse || !isLargeScreen? ' icon-only' : ''}`}>
-          <Icon inline icon='carbon:dashboard'/>
-          {collapse || <span className={`mandatory-label ${collapse ? ' icon-only' : ''}`}>Change Dashboard</span>}
-        <select id="dashboard" className="expanded-button">
-            <option value="1">Dashboard One</option>
-            <option value="2">Dashboard Two</option>
-        </select>
-        </label>
+
+        <DropdownSelect label="Change Dashboard" variant="main-nav" iconBefore="carbon:dashboard" iconOnly={collapse || !isLargeScreen} id="dashboard" >
+          <option value="1">Dashboard One</option>
+          <option value="2">Dashboard Two</option>
+        </DropdownSelect>
         
         <Link className={`nav-item main-nav__link${collapse || !isLargeScreen? ' icon-only' : ''}`} aria-label='logout' to='/logout'>
           <Icon inline icon='carbon:logout' />

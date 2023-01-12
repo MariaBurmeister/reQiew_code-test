@@ -4,11 +4,6 @@
     position: relative;
 }
 
-.nav-link {    
-    // @extend %main-nav-link;
-
-}
-
 .icon-only {
     >span{
         @extend %sr-only;

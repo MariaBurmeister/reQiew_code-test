@@ -1,0 +1,33 @@
+@import '../Variables';
+
+.dropdown-select {
+    position: relative;
+
+    &.main-nav {
+        @extend %main-nav-select-dropdown;
+    }
+
+    &.filter {
+        @extend %filters-select-dropdown;
+
+        &.collapsable{
+        }
+
+    }
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+}
+
+.collapsable {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+

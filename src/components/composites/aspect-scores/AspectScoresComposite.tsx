@@ -7,6 +7,7 @@ import { ProAccountCta } from "../../ProAccountCta";
 import { Icon } from "@iconify/react";
 
 import './AspectScoresComposite.scss';
+import { DropdownSelect } from "../../DropdownSelect";
 
 export const AspectScoresComposite: FunctionComponent = () => {
     const {averageRating, amountOfReviews, reviewsByRate} = useReviews();
@@ -23,9 +24,80 @@ export const AspectScoresComposite: FunctionComponent = () => {
             {/* FILTERS */}
             <section className="page__header">
                 <div className={`filters__${positionFilters}-container`}>
-                    <Button variant={`${positionFilters}-toggle`} label="show filters" iconOnly iconBefore="carbon:settings-adjust" onClick={toggleFilters}/>
+                    <Button 
+                        variant={`${positionFilters}-toggle`} 
+                        label="show filters" 
+                        iconOnly 
+                        iconBefore={
+                            positionFilters === "header" ? 
+                            showFilters ? "carbon:caret-up" : "carbon:caret-down" : 
+                            showFilters ? "carbon:caret-right" : "carbon:caret-left"
+                        } 
+                        onClick={toggleFilters}
+                    />
                     {showFilters && 
-                    <div className="filters" style={{background: 'white', borderRadius: '8px 0 0 8px', border: '1px solid lightgray', marginRight: '.5rem'}}></div>}
+                    <form className="filters" id="filters" style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'flex-start',
+                        background: 'white', 
+                        borderRadius: '8px 0 0 8px', 
+                        border: '1px solid lightgray', 
+                        marginRight: '.5rem',
+                        gap: '1rem',
+                        maxHeight: 'min-content'         
+                    }}>
+                        <fieldset style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            borderRadius: '8px', 
+                            padding: '1rem',
+                            margin: '1rem 0'
+                        }}>
+
+                            <DropdownSelect label="Device Type" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Brand" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Brand" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Date" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Price" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                        </fieldset>
+                        <fieldset style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'flex-start',
+                            borderRadius: '8px', 
+                            padding: '1rem'
+                        }}>
+
+                            <DropdownSelect label="Device Type" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Brand" variant="filter">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>                     
+                        </fieldset>
+
+                    </form>
+                    }
                 </div>
             </section>
             {/* CONTENT */}
