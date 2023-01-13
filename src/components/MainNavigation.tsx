@@ -22,7 +22,7 @@ export const MainNavigation = () => {
   }
 
   return (
-    <section className={`nav${collapse ? '': ' icon-only'}`} aria-label='secondary-navigation'>
+    <section className={`nav${collapse ? ' icon-only' : ''}`}>
         <SkipNavLink/>
         <Link className="logo-link" aria-hidden aria-label='home-page' to="/">
           <Logo semanticTag={hideLabel ? 'img' : 'h1'} variant='main-nav'/>

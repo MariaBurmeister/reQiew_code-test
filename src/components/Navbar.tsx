@@ -20,7 +20,6 @@ export const Navbar: FunctionComponent<NavBarProps> & ItemComposition = ({navNam
         }
         return child;
     });
-    
     return (
         <nav className={`navbar ${variant}`} role='navigation' aria-label={navName} {...rest}>
             <ul>

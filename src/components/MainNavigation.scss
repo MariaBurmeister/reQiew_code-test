@@ -9,14 +9,26 @@
     min-height: 7rem;
 
     &.icon-only {
+        >.navbar {
+            >ul {
+                align-items: flex-end;
+            }
+        }
+    }
+
+    &:not(.icon-only) {
         min-width: 13rem;
         justify-items: stretch;
         >.navbar {
             >ul {
-                align-items: stretch;
+                @media screen and (min-width: 810px) {
+                    align-items: stretch;
+                }
             }
         }
     }
+
+
 
     
     .logo-link{
