@@ -1,2 +1,2 @@
-export { useReviews } from './useReviews';
-export type { Rate, ReviewsByRate, ReviewsData } from './useReviews';
+export { useReviewsData } from './useReviewsData';
+export type { Rate, ReviewsByRate, ReviewsData } from './useReviewsData';

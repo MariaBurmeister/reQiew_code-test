@@ -1,0 +1,60 @@
+@import '../variables';
+
+.score__card {
+
+    &.score__quality__high {
+        background: linear-gradient(0deg, $good-color-light 0%, $good-color-light 30%, rebeccaPurple 150%); 
+    }
+
+    &.score__quality__medium {
+        background: linear-gradient(0deg, $neutral-color-light 0%, $neutral-color-light 30%, rebeccaPurple 150%); 
+    }
+
+    &.score__quality__low {
+        background: linear-gradient(0deg, $critical-color-light 0%, $critical-color-light 30%, rebeccaPurple 150%); 
+    }
+
+    padding-bottom: .5rem;
+
+}
+
+.score__content {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+    justify-items: stretch;
+
+    gap: 1rem;
+
+    flex-wrap: wrap-reverse;
+
+}
+
+.score__score {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.score__trend {
+    font-weight: bolder;
+    border-radius: 50%;
+
+    &.trend-increasing {
+        color: $good-color;
+    }
+    &.trend-stable {
+        color: $neutral-color;
+    }
+    &.trend-decreasing {
+        color: $critical-color;
+    }
+}
+
+.score__transcript {
+    text-align: center;
+    border: 1px solid;
+    border-radius: 15px;
+    
+}

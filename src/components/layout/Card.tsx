@@ -17,7 +17,7 @@ export interface CardProps {
 
 export const Card : FunctionComponent<CardProps> = ({title, titleHelp, linkTo, onClick, className, children, variant = 'base'}) => {   
     return (
-            <article className={`card ${variant}${linkTo || onClick ? ' clickable' : ''}${className ? ' className' : ''}`}>
+            <article className={`card ${variant}${linkTo || onClick ? ' clickable' : ''}${className ? ' ' + className : ''}`}>
                 <header>
                     <h4 className="h2">{title}</h4>
                     <p className="help-text">{titleHelp}</p>

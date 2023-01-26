@@ -1,16 +1,16 @@
 import { FunctionComponent, useState } from "react";
 import { Button } from "../../Button";
-import { useReviews } from "../../hooks&types";
+import { useReviewsData } from "../../hooks&types";
 import { InDepthReviews } from "../../InDepthReviews";
-import { Card } from "../../layout";
 import { ProAccountCta } from "../../ProAccountCta";
 import { Icon } from "@iconify/react";
 
 import './AspectScoresComposite.scss';
 import { DropdownSelect } from "../../DropdownSelect";
+import { Score } from "../../Score";
 
 export const AspectScoresComposite: FunctionComponent = () => {
-    const {averageRating, amountOfReviews, reviewsByRate} = useReviews();
+    const {averageRating, amountOfReviews, reviewsByRate, aspectScores} = useReviewsData();
     const [showFilters, setShowFilters] = useState(false);
     const [positionFilters, setPositionFilters] = useState<'header' | 'sidebar'>('sidebar');
 
@@ -105,57 +105,11 @@ export const AspectScoresComposite: FunctionComponent = () => {
                 <div className="column-1">
                 <ProAccountCta/>
                 <InDepthReviews title="Reliable Reviews" titleHelp="Anti-spam filtered Reviews" averageRating={averageRating} amountOfReviews={amountOfReviews} reviewsByRate={reviewsByRate}/>
-                <InDepthReviews title="Reliable Reviews" titleHelp="Anti-spam filtered Reviews" averageRating={averageRating} amountOfReviews={amountOfReviews} reviewsByRate={reviewsByRate}/>
                 </div>
                 <div className="scores__container">
-                    <Card title="Quality" titleHelp="Score out of 100">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
-                    <Card title="Quality" titleHelp="Score out of 100" className="score__card">
-                        <div className="score__content">
-                            <p className="h1">90%</p>
-                            <Icon inline className="h1" icon="carbon:arrow-up"/>
-                        </div>
-                    </Card>
+                    {aspectScores.map(({aspect, score, trend }, index) => (
+                        <Score key={index} aspect={aspect} score={score} trend={trend}/>
+                    ))}
                 </div>
             </section>
         </>
