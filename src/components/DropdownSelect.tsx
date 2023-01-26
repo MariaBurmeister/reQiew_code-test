@@ -11,21 +11,22 @@ interface DropdownSelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
     children: ReactElement<DropdownSelectProps> | ReactElement<DropdownSelectProps>[];
 }
 
-export const DropdownSelect : FunctionComponent<DropdownSelectProps> = ({label, iconBefore, iconOnly, variant, children, ...rest}) => {
+
+export const DropdownSelect : FunctionComponent<DropdownSelectProps> = ({label, iconBefore, iconOnly, variant, children, disabled, ...rest}) => {
+
 
     return (
-        <label className={`dropdown-select ${variant}${iconOnly ? ' icon-only' : ''}`}>
-            {iconBefore && <Icon inline icon={iconBefore}/>}
-            <span className={`collapsable${iconOnly ? ' icon-only' : ''}`}>
-                <span className="mandatory-label">
-                    {label}
-                </span>
-                <Icon inline icon='carbon:caret-down'/>
-            </span>
+        <label className={`button-face__container dropdown-select ${variant} ${iconOnly ? 'icon-only' : ''} ${disabled ? 'disabled' : ''}`}>
+            {iconBefore && <Icon aria-hidden inline icon={iconBefore}/>}
+
+            <span className={`button-face__mandatory-label ${iconOnly && 'icon-only'}`}>{label}</span>
+
+            <Icon aria-hidden inline icon='carbon:caret-down'/>
             
-            <select className="dropdown-select__select-input expanded-button" {...rest}>
+            <select className="button-face__adjacent expanded" disabled={disabled} {...rest}>
                 {children}
             </select>
-      </label>
+        </label>
+                
     );
 };

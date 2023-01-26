@@ -1,19 +1,32 @@
 @import '../Variables';
 
-.dropdown-select {
+// buttons have an optional iconBefore, and a mandatory label wrapped in a container. Thay might have a utility icon after the label.
+// optional iconOnly prop will hide the label and only show the icon, while keeping the label accessible and semantic for screen readers.
+// content should be fully clickable, from a container level, and not just the text.
+
+// <button-face-container-element className="button-face-container" aria-role="label"> 
+
+//     {iconBefore && <Icon aria-hidden inline icon={iconBefore}/>}
+
+//     <span className={`mandatory-label ${iconOnly && 'icon-only'}`}>{label}</span>
+
+//     <Icon aria-hidden inline icon='carbon:caret-down'/>
+
+//     <select id={dropdownName} className="expanded" {...rest}>
+//         {children}
+//     </select>
+
+// </button-face-container-element> 
+
+// where button-face-container-element might be a <button>, or a <label>, or an <a> tag, depending on the element nature.
+// semantically, use <button> for button behaviours, <label> for form behaviours, and <a> for link behaviours.
+
+.button-face__container {
     position: relative;
 
-    &.main-nav {
-        @extend %main-nav-select-dropdown;
-    }
+    text-decoration: none;
+    direction: ltr;
 
-    &.filter {
-        @extend %filters-select-dropdown;
-
-        &.collapsable{
-        }
-
-    }
 
     display: flex;
     flex-direction: row;
@@ -21,6 +34,126 @@
     justify-content: space-between;
     flex-wrap: nowrap;
 
+    gap: .5rem;
+
+    // max-width: max-content;
+
+    // button-primary:
+
+    margin: 1rem 0.5rem;
+    padding: 0.5rem 1rem;
+
+    border-radius: $border-radius-sm;
+    border-width: 0;
+
+    font-size: medium;
+    font-weight: 600;
+
+    // visual feedback and interactions:
+    
+    cursor: pointer;
+    outline: solid;
+    outline-width: 0;
+
+    &:hover {
+    }
+
+    &:focus  {        
+        outline: solid 5px;
+        outline-offset: -2px;
+    }
+
+    &:active {
+    }
+
+    &.disabled {
+        background-color: lightgray;
+        color: white;
+        outline: none;
+
+        &:hover,:active,:focus {
+            background-color: lightgray;
+            color: white;
+            outline: none;
+        }
+        >.button-face__adjacent{
+            background-color: transparent;
+            color: inherit;
+        }
+    }
+
+    // variants:
+
+    &.icon-only {
+        width: min-content;
+
+        padding: .8rem;
+        border-radius: 50px;
+        gap: 0.25rem;
+    }
+
+    // extra content:
+
+    &:not(.icon-only) {
+        padding-bottom: 2rem;
+    }
+
+    &:has(.button-face__adjacent) {
+        background-color: white;
+    }
+
+    &.icon-only {
+        
+        >.button-face__adjacent {
+            
+            appearance: none;
+
+            text-align: center;
+        
+            padding-top: 5rem;
+        }
+
+    }
+    
+    >.button-face__adjacent {
+        position: absolute;
+        appearance: none;
+
+        text-align: center;
+    
+        padding-top: 2rem;    
+        
+        color: inherit;
+    }
+
+}
+
+.button-face__mandatory-label {
+
+    &.icon-only{
+        @extend %sr-only;
+    }
+}
+
+
+.dropdown-select {
+
+    &.main-nav {
+        @extend %main-nav-select-dropdown-styles;
+
+    }
+
+    &.filter {
+        @extend %filters-select-dropdown-styles;
+
+    }
+
+}
+
+.mandatory-label {
+    &.icon-only{
+        @extend %sr-only;
+    }
 }
 
 .collapsable {
@@ -29,5 +162,29 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
+}
+
+.expanded {
+    position: absolute;
+    color: $font-color-main;
+    background-color: transparent;
+    border: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    z-index: 1;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+    }
+
 }
 

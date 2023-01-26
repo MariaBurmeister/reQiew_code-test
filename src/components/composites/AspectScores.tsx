@@ -1,15 +1,14 @@
 import { FunctionComponent, useState } from "react";
-import { Button } from "../../Button";
-import { useReviewsData } from "../../hooks&types";
-import { InDepthReviews } from "../../InDepthReviews";
-import { ProAccountCta } from "../../ProAccountCta";
-import { Icon } from "@iconify/react";
+import { Button } from "../Button";
+import { useReviewsData } from "../hooks&types";
+import { InDepthReviews } from "../InDepthReviews";
+import { ProAccountCta } from "../ProAccountCta";
 
-import './AspectScoresComposite.scss';
-import { DropdownSelect } from "../../DropdownSelect";
-import { Score } from "../../Score";
+import './AspectScores.scss';
+import { DropdownSelect } from "../DropdownSelect";
+import { Score } from "../Score";
 
-export const AspectScoresComposite: FunctionComponent = () => {
+export const AspectScores: FunctionComponent = () => {
     const {averageRating, amountOfReviews, reviewsByRate, aspectScores} = useReviewsData();
     const [showFilters, setShowFilters] = useState(false);
     const [positionFilters, setPositionFilters] = useState<'header' | 'sidebar'>('sidebar');
@@ -46,7 +45,8 @@ export const AspectScoresComposite: FunctionComponent = () => {
                         border: '1px solid lightgray', 
                         marginRight: '.5rem',
                         gap: '1rem',
-                        maxHeight: 'min-content'         
+                        maxHeight: 'min-content',
+                        overflow: 'scroll',   
                     }}>
                         <fieldset style={{
                             display: 'flex',
@@ -57,7 +57,11 @@ export const AspectScoresComposite: FunctionComponent = () => {
                             margin: '1rem 0'
                         }}>
 
-                            <DropdownSelect label="Device Type" variant="filter">
+                            <DropdownSelect label="Device Type" variant="filter" iconBefore="carbon:mobile" disabled>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </DropdownSelect>
+                            <DropdownSelect label="Brand" variant="filter" >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </DropdownSelect>
@@ -65,11 +69,7 @@ export const AspectScoresComposite: FunctionComponent = () => {
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </DropdownSelect>
-                            <DropdownSelect label="Brand" variant="filter">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                            </DropdownSelect>
-                            <DropdownSelect label="Date" variant="filter">
+                            <DropdownSelect label="Date" variant="filter" iconBefore="carbon:calendar" >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </DropdownSelect>

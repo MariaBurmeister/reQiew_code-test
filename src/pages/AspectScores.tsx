@@ -1,6 +1,6 @@
 import { FunctionComponent } from "react";
 import { Page } from "../components/layout";
-import { AspectScoresComposite } from "../components/composites";
+import { AspectScores as AspectScoresComposite } from "../components/composites";
 
 const AspectScores: FunctionComponent = () => {
     return (

@@ -356,48 +356,35 @@ $sidebar-bg-color: $bg-blue-light;
 
 }
 
-%main-nav-select-dropdown {
-
-    @extend %button-base;
-
-    text-decoration: none;
-
+%main-nav-select-dropdown-styles {
 
     background-color: $bg-blue-medium;
     color: white;
-
-    max-width: unset;
-
+    
     box-shadow: none;
-
-    direction: ltr;
 
     &:hover {
         color: $font-color-main;
         background-color: $bg-blue-light;
         outline: 4px solid  white;
-        box-shadow: none;  
     }
 
     &:has(:active) {
         color: $font-color-main;
         background-color: white;
         outline: 4px solid $bg-blue-dark;
-        box-shadow: none;  
     }
 
     &.active {
         color: $font-color-main;
         background-color: white;
         outline: 4px solid $bg-blue-dark;
-        box-shadow: none;  
     }
 
     &:has( :focus) {
         color: $font-color-main;
         background-color: $bg-blue-light;
         outline: 4px solid  white;
-        box-shadow: none;      
     }
 
     &:disabled {
@@ -405,23 +392,27 @@ $sidebar-bg-color: $bg-blue-light;
         color: white;
     }
 
-    &.icon-only {
-        grid-template-columns: auto;
-        padding: .8rem;
+    >.button-face__adjacent {
+        appearance: none;
 
-        border-radius: 50%;
+        text-align: center;
+    
+        padding-top: 3rem;  
+        
+        color: $font-color-main;
+        
+    }
+
+    &.icon-only {
+        padding-right: 0.5rem;
 
         &:hover {
             color: $font-color-main;
             outline: 4px solid $bg-blue-dark;
-            font-size: larger;
-            padding: .7rem;
         }
 
         &:focus {
             outline: 4px solid $bg-blue-dark;
-            font-size: larger;
-            padding: .7rem;
         }
 
         &.active {
@@ -429,11 +420,19 @@ $sidebar-bg-color: $bg-blue-light;
             background-color: $bg-blue-light;
 
             outline: 4px solid white;
-            font-size: larger;
-            padding: .7rem;
-
-            box-shadow: none;    
         }    
+
+        &.disabled {
+            outline: none;
+            &:hover,:active,:focus {
+                background-color: lightgray;
+                color: white;
+            }
+            >.button-face__adjacent{
+                background-color: transparent;
+                color: inherit;
+            }
+        }
         
         @media screen and (min-width: 810px) {
 
@@ -450,49 +449,28 @@ $sidebar-bg-color: $bg-blue-light;
                 margin-bottom: 3rem;
             }
         }
-                
-        
-        &:disabled {
-            background-color: lightgray;
-            outline: 2px solid darkgray;
-            color: white;
-        }
         
     }
 
 }
 
-%filters-select-dropdown {
 
-    @extend %button-base;
-
-    text-decoration: none;
-
+%filters-select-dropdown-styles {
     width: fit-content;
-
 
     background-color: $bg-orange-light;
     border-radius: 30px;
 
-
     color: $bg-orange-dark;
-
-
-
-    box-shadow: none;
-
-    direction: ltr;
 
     &:hover {
         background-color: $bg-orange-medium;
-        box-shadow: none;  
     }
 
 
     &:active {
         color: $font-color-main;
         background-color: $bg-orange-dark;
-        box-shadow: none;  
     }
 
     &:focus-within {
@@ -500,63 +478,6 @@ $sidebar-bg-color: $bg-blue-light;
         background-color: $bg-orange-dark;
         box-shadow: none;      
     }
-
-    &:disabled {
-        background-color: lightgray;
-        color: white;
-    }
-
-    &.icon-only {
-        grid-template-columns: auto;
-        padding: .8rem;
-
-        border-radius: 50%;
-
-        &:hover {
-            color: $bg-orange-dark;
-            font-size: larger;
-            padding: .7rem;
-        }
-
-        &:focus-within {
-            font-size: larger;
-            padding: .7rem;
-        }
-
-        &.active {
-            color: $font-color-main;
-            background-color: $bg-orange-dark;
-
-            font-size: larger;
-            padding: .7rem;
-
-            box-shadow: none;    
-        }    
-        
-        @media screen and (min-width: 810px) {
-
-            &.active {
-                margin-left: 3rem; 
-                margin-bottom: 0;
-            }
-        }
-
-        @media screen and (max-width: 810px) {
-
-            &.active {
-                margin-left: 0; 
-                margin-bottom: 3rem;
-            }
-        }
-                
-        
-        &:disabled {
-            background-color: lightgray;
-            color: white;
-        }
-        
-    }
-
 }
 
 %header-toggle-button {
@@ -615,9 +536,6 @@ $sidebar-bg-color: $bg-blue-light;
     }
  
 }
-
-
-
 
 
 %help-text {

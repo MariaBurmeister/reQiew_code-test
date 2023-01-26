@@ -1,1 +1,1 @@
-export {AspectScoresComposite} from './aspect-scores';
+export {AspectScores} from './AspectScores';
