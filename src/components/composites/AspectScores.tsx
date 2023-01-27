@@ -39,13 +39,14 @@ export const AspectScores: FunctionComponent = () => {
                     <form className="filters" id="filters" style={{
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center',
+                        alignItems: 'stretch',
                         justifyContent: 'flex-start',
                         background: 'white', 
-                        borderRadius: '8px 0 0 8px', 
                         border: '1px solid lightgray', 
+                        borderRadius: '8px 0 0 8px',
                         marginRight: '.5rem',
-                        gap: '1rem',
+                        padding: '0rem 1rem 0rem 2rem',
+                        gap: '.5rem',
                         maxHeight: 'min-content',
                         overflow: 'scroll',   
                     }}>
@@ -80,7 +81,7 @@ export const AspectScores: FunctionComponent = () => {
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </DropdownSelect>                     
-                        </fieldset>
+                        </FilterGroup>
 
                     </form>
                     }
@@ -88,15 +89,11 @@ export const AspectScores: FunctionComponent = () => {
             </section>
             {/* CONTENT */}
             <section className="results">
-                <div className="column-1">
-                <ProAccountCta/>
-                <InDepthReviews title="Reliable Reviews" titleHelp="Anti-spam filtered Reviews" averageRating={averageRating} amountOfReviews={amountOfReviews} reviewsByRate={reviewsByRate}/>
-                </div>
-                <div className="scores__container">
+                    <ProAccountCta />
+                    <InDepthReviews className="in-depth-reviews" gradient="bottom" title="Reliable Reviews" titleHelp="Anti-spam filtered Reviews" averageRating={averageRating} amountOfReviews={amountOfReviews} reviewsByRate={reviewsByRate}/>
                     {aspectScores.map(({aspect, score, trend }, index) => (
                         <Score key={index} aspect={aspect} score={score} trend={trend}/>
                     ))}
-                </div>
             </section>
         </>
     );

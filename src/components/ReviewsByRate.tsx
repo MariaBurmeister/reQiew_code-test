@@ -8,15 +8,15 @@ export const ReviewsByRate: FunctionComponent<{rate: Rate; amount: number}> = ({
 
     return (
         <article className={`reviews-by-rate ${colorClass}`} aria-labelledby="rate">
-            <p id="rate" className={`by-rate__rating-ratio ${colorClass}`}>
-                <strong className="by-rate__rating-ratio__highlight">{rate}</strong>
-                {rate > 1 ? ' stars' : ' star'}
-            </p>
+            <p aria-label={`Amount of ${rate} reviews`} className="by-rate__review-amount__highlight">{amount}</p>
             <div className={`by-rate__progress ${colorClass}`}>
                 <progress aria-label={`Percentage of ${rate} stars reviews`} value={amount} max="100"/>
                 <p>{rateMap[rate].stars}</p>
             </div>
-            <p aria-label={`Amount of ${rate} reviews`} className="by-rate__review-amount__highlight">{amount}</p>
+            <p id="rate" className={`by-rate__rating-ratio ${colorClass}`}>
+                <strong className="by-rate__rating-ratio__highlight">{rate}</strong>
+                {rate > 1 ? ' stars' : ' star'}
+            </p>
             <p aria-hidden>Reviews</p>
         </article>
     );

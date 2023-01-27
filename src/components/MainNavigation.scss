@@ -10,8 +10,13 @@
 
     &.icon-only {
         >.navbar {
+
             >ul {
                 align-items: flex-end;
+
+                @media screen and (max-height: 666px) {
+                    background: linear-gradient(90deg , #4a85971f 70%, transparent 30%);
+                }
             }
         }
     }
@@ -21,6 +26,10 @@
         justify-items: stretch;
         >.navbar {
             >ul {
+                
+                @media screen and (max-width: 508px) {
+                    background: linear-gradient(0deg , #4a85971f 66%, transparent 34%);
+                }
                 @media screen and (min-width: 810px) {
                     align-items: stretch;
                 }

@@ -12,6 +12,7 @@ export const ProAccountCta = () => {
                 linkTo="/account"
                 variant="blue"
                 gradient="top"
+                className="pro-account-cta"
                 >
                 <span className="pro-account-cta__content">
                     <label  htmlFor="/account"> Edit Subscription</label>
