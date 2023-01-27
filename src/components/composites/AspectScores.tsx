@@ -7,6 +7,7 @@ import { ProAccountCta } from "../ProAccountCta";
 import './AspectScores.scss';
 import { DropdownSelect } from "../DropdownSelect";
 import { Score } from "../Score";
+import { FilterGroup } from "../FilterGroup";
 
 export const AspectScores: FunctionComponent = () => {
     const {averageRating, amountOfReviews, reviewsByRate, aspectScores} = useReviewsData();
@@ -48,15 +49,7 @@ export const AspectScores: FunctionComponent = () => {
                         maxHeight: 'min-content',
                         overflow: 'scroll',   
                     }}>
-                        <fieldset style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            borderRadius: '8px', 
-                            padding: '1rem',
-                            margin: '1rem 0'
-                        }}>
-
+                        <FilterGroup groupName="Filter Group 1">
                             <DropdownSelect label="Device Type" variant="filter" iconBefore="carbon:mobile" disabled>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -77,15 +70,8 @@ export const AspectScores: FunctionComponent = () => {
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                             </DropdownSelect>
-                        </fieldset>
-                        <fieldset style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            borderRadius: '8px', 
-                            padding: '1rem'
-                        }}>
-
+                        </FilterGroup>
+                        <FilterGroup groupName="Filter Group 2">
                             <DropdownSelect label="Device Type" variant="filter">
                                 <option value="1">1</option>
                                 <option value="2">2</option>
