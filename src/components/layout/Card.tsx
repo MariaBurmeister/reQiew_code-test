@@ -13,11 +13,13 @@ export interface CardProps {
     children: ReactNode;
     //to refine:
     variant?: 'base' | 'pink' | 'blue' | 'green' | 'yellow' | 'orange';
+    gradient?: 'none' | 'top' | 'bottom';
 }
 
-export const Card : FunctionComponent<CardProps> = ({title, titleHelp, linkTo, onClick, className, children, variant = 'base'}) => {   
+export const Card : FunctionComponent<CardProps> = ({title, titleHelp, linkTo, onClick, className, children, variant = 'base', gradient = 'none'}) => {   
+    const gradientClass = gradient === 'none' ? '' : ` gradient-${gradient}`;
     return (
-            <article className={`card ${variant}${linkTo || onClick ? ' clickable' : ''}${className ? ' ' + className : ''}`}>
+            <article className={`card ${variant}${linkTo || onClick ? ' clickable' : ''}${gradientClass} ${className ? ' ' + className : ''}`}>
                 <header>
                     <h4 className="h2">{title}</h4>
                     <p className="help-text">{titleHelp}</p>

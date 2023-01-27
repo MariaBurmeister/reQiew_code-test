@@ -11,6 +11,7 @@ export const ProAccountCta = () => {
                 titleHelp="You have access to all functions" 
                 linkTo="/account"
                 variant="blue"
+                gradient="top"
                 >
                 <span className="pro-account-cta__content">
                     <label  htmlFor="/account"> Edit Subscription</label>

@@ -7,9 +7,16 @@
     border-radius: 2.5rem;
     box-shadow: 0 1px 2px 0 #0000000d;
     padding: 2.5rem;
+    outline-offset: -2px;
 
     &.base {
         background-color: $bg-yellow-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-yellow-light 0%, $bg-yellow-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-yellow-light 50%, $bg-yellow-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-yellow-medium; 
             outline: 4px solid $bg-yellow-medium;
@@ -17,6 +24,12 @@
     }
     &.pink {
         background-color: $bg-pink-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-pink-light 0%, $bg-pink-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-pink-light 50%, $bg-pink-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-pink-medium;
             outline: 4px solid $bg-pink-medium;
@@ -24,6 +37,12 @@
     }
     &.green {
         background-color: $bg-green-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-green-light 0%, $bg-green-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-green-light 50%, $bg-green-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-green-medium;
             outline: 4px solid $bg-green-medium;
@@ -31,6 +50,12 @@
     }
     &.blue {
         background-color: $bg-blue-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-blue-light 0%, $bg-blue-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-blue-light 50%, $bg-blue-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-blue-medium;
             outline: 4px solid $bg-blue-medium;
@@ -38,6 +63,12 @@
     }
     &.pink {
         background-color: $bg-pink-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-pink-light 0%, $bg-pink-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-pink-light 50%, $bg-pink-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-pink-medium;
             outline: 4px solid $bg-pink-medium;
@@ -45,6 +76,12 @@
     }
     &.orange {
         background-color: $bg-orange-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-orange-light 0%, $bg-orange-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-orange-light 50%, $bg-orange-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-orange-medium;
             outline: 4px solid $bg-orange-medium;
@@ -52,6 +89,12 @@
     }
     &.yellow {
         background-color: $bg-yellow-light;
+        &.gradient-top {
+            background: linear-gradient(0deg, $bg-yellow-light 0%, $bg-yellow-light 30%, $accent-color 150%);
+        }
+        &.gradient-bottom {
+            background: linear-gradient(0deg, $accent-color -50%, $bg-yellow-light 50%, $bg-yellow-light 100%);
+        }
         &.clickable:hover {
             background-color: $bg-yellow-medium;
             outline: 4px solid $bg-yellow-medium;

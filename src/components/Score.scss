@@ -3,15 +3,15 @@
 .score__card {
 
     &.score__quality__high {
-        background: linear-gradient(0deg, $good-color-light 0%, $good-color-light 30%, rebeccaPurple 150%); 
+        background: linear-gradient(0deg, $good-color-light 0%, $good-color-light 30%, $accent-color 150%); 
     }
 
     &.score__quality__medium {
-        background: linear-gradient(0deg, $neutral-color-light 0%, $neutral-color-light 30%, rebeccaPurple 150%); 
+        background: linear-gradient(0deg, $neutral-color-light 0%, $neutral-color-light 30%, $accent-color 150%); 
     }
 
     &.score__quality__low {
-        background: linear-gradient(0deg, $critical-color-light 0%, $critical-color-light 30%, rebeccaPurple 150%); 
+        background: linear-gradient(0deg, $critical-color-light 0%, $critical-color-light 30%, $accent-color 150%); 
     }
 
     padding-bottom: .5rem;
