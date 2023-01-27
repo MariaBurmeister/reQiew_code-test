@@ -18,10 +18,10 @@ $neutral-color-light: rgba(249, 187, 73, 0.72);
 
 $neutral-good-color: #ffe100 ;
 
-
 $good-color-dark: darkgreen;
 $good-color: green;
 $good-color-light: lightgreen;
+
 
 
 $bg-pink-light: #ffb6c199;
@@ -40,6 +40,12 @@ $bg-orange-dark: orange;
 
 $bg-yellow-light: #fff3b699;
 $bg-yellow-medium: #fff3b6;
+
+$bg-gray-dark: rgb(102, 101, 101);
+$bg-gray-medium: rgb(126, 126, 126);
+$bg-gray-light: darkgray;
+
+
 
 $border-radius-sm: 4px;
 $border-radius-md: 8px;
@@ -365,6 +371,8 @@ $sidebar-bg-color: $bg-blue-light;
     
     box-shadow: none;
 
+    margin: 1rem 0.5rem;
+
     &:hover {
         color: $font-color-main;
         background-color: $bg-blue-light;
@@ -435,6 +443,17 @@ $sidebar-bg-color: $bg-blue-light;
                 color: inherit;
             }
         }
+
+        >.button-face__adjacent {
+            appearance: none;
+    
+            text-align: center;
+        
+            padding-top: 3rem;  
+            
+            color: $font-color-main;
+            
+        }
         
         @media screen and (min-width: 810px) {
 
@@ -460,25 +479,24 @@ $sidebar-bg-color: $bg-blue-light;
 %filters-select-dropdown-styles {
     width: fit-content;
 
-    background-color: $bg-orange-light;
-    border-radius: 30px;
+    background-color: $bg-gray-light;
+    border-radius: 16px;
 
-    color: $bg-orange-dark;
+    color: $bg-gray-dark;
 
     &:hover {
-        background-color: $bg-orange-medium;
+        color: white;
+        background-color: $bg-gray-medium;
     }
 
-
     &:active {
-        color: $font-color-main;
-        background-color: $bg-orange-dark;
+        color: white;
+        background-color: $bg-gray-medium;
     }
 
     &:focus-within {
-        color: $font-color-main;
-        background-color: $bg-orange-dark;
-        box-shadow: none;      
+        color: white;
+        background-color: $bg-gray-medium;
     }
 }
 
