@@ -1,6 +1,7 @@
 # ReQiew
 
-### This is a code challenge for ST company.
+### This was a design & code challenge for ST company.
+You can find media of the resulting interfaces [here](https://drive.proton.me/urls/14T9K5SN2G#h8ubAKcubP8x) as well as the initially provided docs.
 
 #### **To run project locally**:
 
@@ -11,7 +12,7 @@
 The goal was to provide a prototype to be presented in order to get a green loght fot the project,
 while making suggestions for improvements in UX/UI and data viualization.
 
-#### **Implemented suggestions for improvements**:
+### **Implemented suggestions for improvements**:
 
 ##### **Layout**:
 
